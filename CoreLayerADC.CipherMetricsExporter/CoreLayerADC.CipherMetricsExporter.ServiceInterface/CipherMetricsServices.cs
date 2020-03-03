@@ -8,8 +8,8 @@ namespace CoreLayerADC.CipherMetricsExporter.ServiceInterface
 {
     public class CipherMetricsServices : Service
     {
-        public readonly static ILog Log = LogManager.GetLogger(typeof(CipherMetricsServices));
-        public readonly static Dictionary<string, Counter> Counters = new Dictionary<string, Counter>();
+        private static readonly ILog Log = LogManager.GetLogger(typeof(CipherMetricsServices));
+        private static readonly Dictionary<string, Counter> Counters = new Dictionary<string, Counter>();
 
         public object Post(CipherHit request)
         {
@@ -20,7 +20,7 @@ namespace CoreLayerADC.CipherMetricsExporter.ServiceInterface
                     request.ToJson(),
                     Metrics.CreateCounter(
                         "cipher_hits_total", 
-                        "Number of hits of a Cipher",
+                        "Number of hits for a combination of TLS Version and Cipher",
                         new CounterConfiguration
                         {
                             LabelNames = new[]
