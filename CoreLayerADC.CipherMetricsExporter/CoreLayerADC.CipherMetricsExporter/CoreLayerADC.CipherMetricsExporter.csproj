@@ -1,0 +1,22 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Folder Include="wwwroot\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="prometheus-net.AspNetCore" Version="3.4.0" />
+    <PackageReference Include="ServiceStack" Version="5.*" />
+    <PackageReference Include="ServiceStack.Api.OpenApi" Version="5.8.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\CoreLayerADC.CipherMetricsExporter.ServiceInterface\CoreLayerADC.CipherMetricsExporter.ServiceInterface.csproj" />
+    <ProjectReference Include="..\CoreLayerADC.CipherMetricsExporter.ServiceModel\CoreLayerADC.CipherMetricsExporter.ServiceModel.csproj" />
+  </ItemGroup>
+
+</Project>
