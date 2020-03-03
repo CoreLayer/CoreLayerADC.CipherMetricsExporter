@@ -38,7 +38,7 @@ namespace CoreLayerADC.CipherMetricsExporter
 
     public class AppHost : AppHostBase
     {
-        public AppHost() : base("CoreLayer.CipherMetricsExporter", typeof(CipherMetricsServices).Assembly) { }
+        public AppHost() : base("CoreLayerADC.CipherMetricsExporter", typeof(CipherMetricsServices).Assembly) { }
 
         // Configure your AppHost with the necessary configuration and dependencies your App needs
         public override void Configure(Container container)
